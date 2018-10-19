@@ -1,0 +1,32 @@
+body {
+  margin: 0px;
+}
+
+.detail {
+  height: 20px;
+  background-color: #000000;
+}
+
+.main {
+  width: 80%;
+  margin: auto;
+}
+
+.flex {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.flex-column {
+  flex-direction: column;
+}
+
+.about-me {
+  width: 34vw;
+  margin-right: 3vw;
+}
+
+.slider {
+  width: 63vw;
+}
