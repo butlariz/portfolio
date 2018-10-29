@@ -1,4 +1,5 @@
 import React from 'react';
+import About from './About.js';
 
 function Button(props) {
   return (
@@ -7,4 +8,3 @@ function Button(props) {
 }
 
 export default Button;
-
