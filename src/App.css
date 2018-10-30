@@ -3,14 +3,21 @@ body {
   font-family: 'Quicksand', sans-serif;
 }
 
+a {
+  color: #000;
+  text-decoration: none;
+}
+
 .detail {
-  height: 20px;
+  height: 8vh;
   background-color: #000000;
+  background-image: url("./assets/marble.jpg")
 }
 
 .main {
   width: 80%;
   margin: auto;
+  height: 84vh;
 }
 
 .flex {
@@ -23,11 +30,78 @@ body {
   flex-direction: column;
 }
 
-.about-me {
-  width: 34vw;
-  margin-right: 3vw;
+h1.title {
+  margin: 0 0 20px;
+}
+
+section.about {
+  width: 35%;
+}
+
+.about-content {
+  height: 170px;
+  text-align: justify;
+}
+
+.about-content ul {
+  display: flex;
+  padding: 0;
+  flex-wrap: wrap;
+}
+
+.about-content ul li {
+  width: 49%;
+  list-style: none;
+  text-transform: uppercase;
+  letter-spacing: 1pt;
+  font-size: 10pt;
+}
+
+.full-list { 
+  width: 100%!important;
 }
 
 .slider {
-  width: 63vw;
+  width: 70%;
+}
+
+.photo-slider {
+  width: 85%;
+}
+
+.image-slider {
+  width: 100%;
+}
+
+.desc-slider {
+  position: absolute;
+  bottom: 100%;
+}
+
+.caroussel-nav {
+  width: 15%;
+  text-align: center;
+}
+
+.btn-nav {
+  background-color: transparent;
+  border: none;
+  text-transform: uppercase;
+  letter-spacing: 1pt;
+  margin-bottom: 5px;
+}
+
+.navigation {
+  display: flex;
+  margin-top: 20px;
+}
+
+.navigation a {
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  background-color: #e4e4e4;
+  padding: 4px;
+  margin-right: 10px;
+  font-size: 9pt;
 }

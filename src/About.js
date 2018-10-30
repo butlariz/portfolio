@@ -1,6 +1,5 @@
 import React from 'react';
 import { Route } from 'react-router-dom';
-import Title from './Title.js';
 import Nav from './Nav.js';
 import data from './data.js';
 
@@ -9,15 +8,47 @@ function Text(props) {
 
   return (
     <div className="about-content"> 
-      {contentText}
+      <ul>
+      { Array.isArray(contentText) ? contentText.map((value, item) => <li key={item} > {value} </li>) : contentText }
+      </ul>
     </div>
   );
 }
 
-const textHome = () => <Text content={data.texts.home}/>
-const textTechSkills = () => <Text content={data.texts.techSkills}/>
-const textAboutMe = () => <Text content={data.texts.about}/>
-const textContact = () => <Text content={data.texts.contact}/>
+const textHome = () => {
+  return (
+    <div>
+      <h1 className="title"> Larissa Santana </h1>
+      <Text content={data.texts.home}/>
+    </div>
+  )
+} 
+
+const textTechSkills = () => {
+  return (
+    <div>
+      <h1 className="title"> Tech Skills </h1>
+      <Text content={data.texts.techSkills}/>
+    </div>
+  )
+} 
+const textAboutMe = () => {
+  return (
+    <div>
+      <h1 className="title"> About me </h1>
+      <Text content={data.texts.about}/>
+    </div>
+  )
+}
+
+const textContact = () => {
+  return (
+    <div>
+      <h1 className="title"> Contact </h1>
+      <Text content={data.texts.contact}/>
+    </div>
+  )
+} 
 
 class About extends React.Component {
   constructor(props) {
@@ -26,14 +57,13 @@ class About extends React.Component {
 
   render() {
     return (
-      <div>
-        <Title />
+      <section className="about">
         <Route path="/" exact component={textHome} />
         <Route path="/about" exact component={textAboutMe} />
         <Route path="/techskills" exact component={textTechSkills} />
         <Route path="/contact" exact component={textContact} />
         <Nav />
-      </div>
+      </section>
     );
   }
 }
