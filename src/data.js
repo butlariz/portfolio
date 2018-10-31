@@ -1,3 +1,8 @@
+import imageAquamarine from './assets/aquamarine.png';
+import imageFoodmap from './assets/foodmap.png';
+import imageDataDashboard from './assets/datadashboard.png';
+import imageGamely from './assets/gamely.png';
+
 const data = { 
   "texts": {
     "home": "Hi! I'm Lariz, a front end developer, very interested in interfaces and passionate with being creative.",
@@ -7,14 +12,26 @@ const data = {
   },
   "projects": [{
       "id": 1,
+      "name": "Aquamarine",
+      "image": imageAquamarine,
+      "description": "A web application for find restaurants in a map, and have more information about them. Technologies used: Google Maps API, Bootstrap, Modals, Jquery"
+    },
+    {
+      "id": 1,
       "name": "Foodmap",
-      "image": "https://kaboompics.com/cache/2/e/c/2/1/2ec21da83a9a45648ac6286cd532aeeadf1b7c7f.jpeg?version=v37",
+      "image": imageFoodmap,
+      "description": "A web application for find restaurants in a map, and have more information about them. Technologies used: Google Maps API, Bootstrap, Modals, Jquery"
+    },
+    {
+      "id": 1,
+      "name": "Data Dashboard",
+      "image": imageDataDashboard,
       "description": "A web application for find restaurants in a map, and have more information about them. Technologies used: Google Maps API, Bootstrap, Modals, Jquery"
     },
     {
       "id": 2,
       "name": "Gamely",
-      "image": "https://kaboompics.com/cache/8/0/5/9/c/8059c75fed7cb39dcf13010eec6c1b42a1bc897f.jpeg?version=v37",
+      "image": imageGamely,
       "description": "A social network possible to post, edit, delete and follow friends. Use firebase to hosting and save data"
     }
   ]
