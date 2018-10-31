@@ -9,10 +9,16 @@ function Text(props) {
   return (
     <div className="about-content"> 
       <ul>
-      { Array.isArray(contentText) ? contentText.map((value, item) => <li key={item} > {value} </li>) : contentText }
+      { Array.isArray(contentText) ? contentText.map((value, item) => <List id={item} content={value} size={contentText.length} />) : contentText }
       </ul>
     </div>
   );
+}
+
+function List(props) {
+  return (
+    props.size > 8 ? <li key={props.id} className="half"> {props.content} </li> : <li key={props.id} className="full"> {props.content} </li>
+  )
 }
 
 const textHome = () => {
