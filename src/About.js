@@ -16,15 +16,23 @@ function Text(props) {
 }
 
 function List(props) {
-  return (
-    props.size > 8 ? <li key={props.id} className="half"> {props.content} </li> : <li key={props.id} className="full"> {props.content} </li>
-  )
+  if (typeof props.content === 'string') {
+    return (
+      props.size > 8 ? <li key={props.id} className="half"> {props.content} </li> : <li key={props.id} className="full"> {props.content} </li>
+    )
+  } else if (props.content.type === "link") {
+    return (
+      <li key={props.id} className="half"> 
+        <a href={props.content.url} target="_blank"> {props.content.text} </a>
+      </li>
+    )
+  }
 }
 
 const textHome = () => {
   return (
     <div>
-      <h1 className="title"> Larissa Santana </h1>
+      <h1 className="title"> Lariz Santana </h1>
       <Text content={data.texts.home}/>
     </div>
   )
@@ -57,9 +65,6 @@ const textContact = () => {
 } 
 
 class About extends React.Component {
-  constructor(props) {
-    super(props);
-  }
 
   render() {
     return (

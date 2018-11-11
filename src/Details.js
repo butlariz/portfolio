@@ -2,7 +2,7 @@ import React from 'react';
 
 function Details(props) {
   return (
-    <div className="detail"></div>
+    <div className={props.classes}></div>
   )
 }
 

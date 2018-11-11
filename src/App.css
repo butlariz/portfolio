@@ -8,14 +8,46 @@ a {
   text-decoration: none;
 }
 
+.active {
+  font-weight: bold;
+  color: #000;
+  font-size: 0.85rem!important;
+  transition: 0.4s ease-in-out;
+}
+
 .detail {
   height: 8vh;
   background-color: #000000;
-  background-image: url("./assets/marble.jpg")
+  background-image: url("./assets/blackbg.png")
+}
+
+.detailtop::after {
+  content: '';
+  background: url("./assets/flower-top.png") no-repeat;
+  background-size: 100%;
+  width: 250px;
+  height: 240px;
+  right: 0;
+  display: block;
+  z-index: 3;
+  position: absolute;
+}
+
+.detailbottom::before {
+  content: '';
+  background-image: url("./assets/folwer-bottom.png");
+  background-size: 100%;
+  width: 250px;
+  height: 205px;
+  left: 0;
+  bottom: 0;
+  display: block;
+  z-index: 3;
+  position: absolute;
 }
 
 .main {
-  width: 80%;
+  width: 83%;
   margin: auto;
   height: 84vh;
 }
@@ -35,7 +67,7 @@ h1.title {
 }
 
 section.about {
-  width: 35%;
+  width: 30%;
 }
 
 .about-content {
@@ -50,11 +82,17 @@ section.about {
 }
 
 .about-content ul li {
-  width: 49%;
+  min-width: 49%;
   list-style: none;
   text-transform: uppercase;
   letter-spacing: 1pt;
-  font-size: 10pt;
+  font-size: 1rem;
+  margin-bottom: 9px;
+}
+
+.about-content a {
+  border-bottom: 1px solid;
+  padding-bottom: 4px;
 }
 
 .full-list { 
@@ -62,11 +100,18 @@ section.about {
 }
 
 .slider {
-  width: 70%;
+  width: 64%;
 }
 
 .photo-slider {
-  width: 85%;
+  width: 78%;
+}
+
+figure {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .image-slider {
@@ -74,12 +119,38 @@ section.about {
 }
 
 .desc-slider {
+  background-color: #151515;
+  padding: 10px 30px;
+  z-index: 4;
+  color: #fff;
+  opacity: 0;
+  -webkit-transition: .4s ease-in-out;
+  transition: .4s ease-in-out;
   position: absolute;
-  bottom: 100%;
+  width: 400px;
+  margin-top: 270px;
+}
+
+.desc-slider a {
+  text-transform: uppercase;
+  letter-spacing: 2pt;
+  font-size: 0.8rem;
+  font-weight: bold;
+  background-color: #afda9e;
+  padding: 2px 5px;
+}
+
+p.desc-link {
+  width: 100%;
+  text-align: center;
+}
+
+.slider:hover .desc-slider {
+  opacity: 1
 }
 
 .caroussel-nav {
-  width: 15%;
+  width: 20%;
   text-align: center;
 }
 
@@ -88,20 +159,76 @@ section.about {
   border: none;
   text-transform: uppercase;
   letter-spacing: 1pt;
-  margin-bottom: 5px;
+  margin-bottom: 9px;
+  font-size: 0.7rem;
+  cursor: pointer;
+}
+
+.btn-nav a {
+  color: #424242
 }
 
 .navigation {
   display: flex;
   margin-top: 20px;
+  background-color: #afda9e;
+  justify-content: center;
 }
 
 .navigation a {
   font-weight: bold;
   text-transform: uppercase;
   letter-spacing: 1px;
-  background-color: #e4e4e4;
   padding: 4px;
   margin-right: 10px;
-  font-size: 9pt;
+  font-size: 0.8rem;
+}
+
+@media only screen and (max-width: 576px) {
+  .flex {
+    flex-direction: column;
+  }
+  .main {
+    height: auto;
+    width: 80%;
+    margin-top: 40px;
+    font-size: 1rem;
+  }
+
+  .detailtop::after { 
+    width: 200px;
+  }
+
+  section.about {
+    width: 100%;
+  }
+
+  .about-content {
+    height: auto;
+  }
+
+  .slider {
+    width: 100%;
+  }
+
+  .photo-slider {
+    width: 100%;
+    margin: 30px 0px;
+  }
+
+  .desc-slider {
+    opacity: 1;
+    position: relative;
+    margin: 30px;
+  }
+  
+  .detailbottom::before {
+    margin-top: -138px;
+    height: 200px;
+    bottom: auto;
+  }
+
+  .caroussel-nav {
+    margin-bottom: 50px;
+  }
 }
